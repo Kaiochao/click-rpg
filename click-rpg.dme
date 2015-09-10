@@ -1,0 +1,62 @@
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+#define FILE_DIR rsc\
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+
+// definitions
+	#define TRUE 1
+	#define FALSE 0
+
+	#define TILE_WIDTH 32
+	#define TILE_HEIGHT 32
+	#define FPS 30
+	#define TICK_LAG (10/FPS)
+
+	#define FULLSCREEN FALSE
+
+world
+	icon_size = 32
+	fps = FPS
+
+// libraries
+	#include <kaiochao\shapes\shapes.dme>
+
+// non-libraries
+	#include "..\keyboard\keyboard.dme"
+	#include "..\math\math.dme"
+	#include "..\mouse\mouse.dme"
+	#include "..\position\position.dme"
+	#include "..\smooth-movement\smooth-movement.dme"
+
+// source
+	#if FULLSCREEN
+		#include "fullscreen.dmf"
+	#else
+		#include "windowed.dmf"
+	#endif
+
+	// engine
+		#include "code\entity.dm"
+		#include "code\entity-controls.dm"
+		#include "code\client-loop.dm"
+		#include "code\entity-loop.dm"
+		#include "code\camera.dm"
+		#include "code\mouse.dm"
+
+		#include "code\sword-attack.dm"
+		#include "code\enemy.dm"
+
+	#include "code\game.dm"
+
+	#include "code\nametag.dm"
+	#include "code\chat.dm"
+
+
+// BEGIN_INCLUDE
+// END_INCLUDE
